@@ -1,0 +1,4 @@
+"0","dist_adj =  dist_m ^ dist_on_map"
+"0","clust_adj = hclust(as.dist(dist_adj), 'ward.D2')"
+"0","som_cluster_adj = cutree(clust_adj, 11)"
+"0","plot(m, type=""codes"", main = ""Clusters"", bgcol = col_vector[som_cluster_adj], pchs = NA)"

@@ -1,0 +1,6 @@
+"0","#silhouette method"
+"0","factoextra::fviz_nbclust(dist_adj"
+"0","                         , factoextra::hcut"
+"0","                         , method = ""silhouette"""
+"0","                         , hc_method = ""ward.D2"""
+"0","                         , k.max =  15)"

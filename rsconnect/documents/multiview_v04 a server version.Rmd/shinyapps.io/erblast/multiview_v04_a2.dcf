@@ -1,0 +1,11 @@
+name: multiview_v04_a2
+title: multiview_v04_a
+account: erblast
+server: shinyapps.io
+appId: 197464
+bundleId: 907001
+url: https://erblast.shinyapps.io/multiview_v04_a2/
+when: 1500353793.91742
+asMultiple: TRUE
+asStatic: FALSE
+ignoredFiles: multiview_v04.Rmd
