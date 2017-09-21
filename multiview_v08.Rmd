@@ -46,7 +46,9 @@ library(Amelia)
 library(e1071)
 require(shiny)
 
-# setwd("C:/Users/erbla/OneDrive/R/multiview shiny")
+# define better color palette
+qual_col_pals  = RColorBrewer::brewer.pal.info[RColorBrewer::brewer.pal.info$category == 'qual',]
+color_pallette = unlist(mapply(RColorBrewer::brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))
 
 
 source( stringr::str_c(getwd(),'/mod_load_data v03.R') )
@@ -55,9 +57,9 @@ source( stringr::str_c(getwd(),'/mod_summary v02.R') )
 
 source( stringr::str_c(getwd(), '/mod_clean_data v05.R') )
 
-source( stringr::str_c(getwd(), '/mod_vis_groups_v02.R') )
+source( stringr::str_c(getwd(), '/mod_vis_groups_v03.R') )
 
-source( stringr::str_c(getwd(), '/mod_tree_v02.R') )
+source( stringr::str_c(getwd(), '/mod_tree_v04.R') )
 
 source( stringr::str_c(getwd(), '/mod_save_v01.R') )
 
@@ -192,12 +194,12 @@ rea_ana   = mod_ana_rea(input, status, rea_clean)
 
 mod_vis_groups_ui(rea_ana, input$default_group)
 
-mod_vis_groups_render_no_obs(input, rea_ana)
+mod_vis_groups_render_no_obs(input, rea_ana, color_pallette = color_pallette)
 
 
-mod_vis_groups_render_numericals(input, rea_ana, boxcox = T)
+mod_vis_groups_render_numericals(input, rea_ana, boxcox = T, color_pallette = color_pallette)
 
-mod_vis_groups_render_categoricals(input, rea_ana)
+mod_vis_groups_render_categoricals(input, rea_ana, color_pallette = color_pallette)
 
 
 
